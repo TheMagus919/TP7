@@ -83,7 +83,6 @@ public class Alumno {
         
     }else{
             return(legajo==((Alumno)obj).legajo);
-            
         }
     }
 

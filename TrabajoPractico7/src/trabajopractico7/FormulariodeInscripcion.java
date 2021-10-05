@@ -24,13 +24,13 @@ public class FormulariodeInscripcion extends javax.swing.JInternalFrame {
     private void llenarCombo(){
         HashSet<Alumno>al=FormulariodeAlumnos.getAlumnos();
         for(Alumno it:al){
-            cbbAlumno.addItem(it.toString());
+            cbbAlumno.addItem(it);
         }
         cbbAlumno.setSelectedIndex(-1);
         
         HashSet<Materia>ma=FormulariodeMaterias.getMateria();
         for(Materia at:ma){
-            cbbMateria.addItem(at.toString());
+            cbbMateria.addItem(at);
         }
         cbbMateria.setSelectedIndex(-1);
     }
@@ -150,6 +150,7 @@ public class FormulariodeInscripcion extends javax.swing.JInternalFrame {
         // TODO add your handling code here: 
             Alumno a=(Alumno)cbbAlumno.getSelectedItem();
             Materia m=(Materia)cbbMateria.getSelectedItem();
+
             if(a.agregarMaterias(m)){
             JOptionPane.showMessageDialog(this, "Alumno inscripto.");
         }else{
@@ -169,8 +170,8 @@ public class FormulariodeInscripcion extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInscribir;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox<String> cbbAlumno;
-    private javax.swing.JComboBox<String> cbbMateria;
+    private javax.swing.JComboBox<Alumno> cbbAlumno;
+    private javax.swing.JComboBox<Materia> cbbMateria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
